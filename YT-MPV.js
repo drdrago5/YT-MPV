@@ -21,27 +21,36 @@ function polymerInject() {
   btnDiv.id = "parentButton";
   var btn = document.createElement("a");
   btn.style.display = "block";
-  btn.style.width = "100%";
+  btn.style.float = "left"
   btn.style.backgroundColor = "#121212";
   btn.style.color = "#909090";
   btn.style.textAlign = "center";
   btn.style.padding = "10px 0";
   btn.style.marginTop = "5px";
-  btn.style.fontSize = "14px";
-  btn.style.border = "1px";
-  btn.style.borderColor = "#909090";
+  btn.style.fontSize = "15px";
+  btn.style.textDecoration = "none";
   btn.style.cursor = "pointer";
-  btn.style.borderRadius = "2px";
+  btn.appendChild(document.createTextNode("MPV"));
   btn.style.fontFamily = "Roboto, Arial, sans-serif";
   btn.href = "mpv://" + window.location.href;
   btnDiv.appendChild(btn);
   var img = document.createElement("i");
-  img.setAttribute('Class', 'far fa-play-circle fa-2x');
-  btn.appendChild(img);
+  img.setAttribute('Class', 'far fa-play-circle fa-3x');
+  img.style.display = "block";
+  img.style.float = "left";
+  img.style.backgroundColor = "#121212";
+  img.style.color = "#909090";
+  img.style.textAlign = "center";
+  img.style.marginTop = "5px";
+  img.style.marginLeft = "5px";
+  img.style.fontSize = "33px";
+  img.style.textDecoration = "none";
+  img.style.cursor = "pointer";
+  btnDiv.appendChild(img);
   /* Find and add to target */
-  var te = document.querySelectorAll("[id='notification-preference-toggle-button']");
+  var te = document.querySelectorAll("[id='subscribe-button']");
   for (var i = 0; i < te.length; i++) {
-    if (te[i].className.indexOf("style-scope ytd-subscribe-button-renderer") > -1) {
+    if (te[i].className.indexOf("ytd-video-secondary-info-renderer") > -1) {
       te[i].appendChild(btnDiv);
     }
   }
